@@ -1,0 +1,51 @@
+.wrap-movie {
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+
+  .wrap-search-input {
+    margin-bottom: 20px;
+  
+    .center-input {
+      margin: 0 auto;
+      padding: 1rem 0;
+      width: 65%;
+  
+      .hold-input {
+        display: flex;
+        
+        input {
+          width: 100%;
+          line-height: 1.5em;
+          padding: 1em;
+          border: 1px solid rgba(18, 28, 41, 0.15);
+          border-radius: .5rem;
+          
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  .wrap-not-found {
+    margin: 4rem;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .wrap-loading {
+    margin: 4rem;
+    
+    mat-spinner {    
+      margin: 0 auto;
+    }
+  }
+  
+  .pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 0;
+  }
+}

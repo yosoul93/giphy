@@ -1,1 +1,51 @@
-<p>search works!</p>
+<div class="wrap-movie">
+  
+    <div class="wrap-search-input" >
+      <div class="center-input">
+        <div class="hold-input">
+          <input 
+            [type]="'text'"
+            matInput
+            [autocomplete]="'off'"
+            [formControl]="searchInputControl"
+            [placeholder]="'Search for a Movie..'">
+        </div>
+      </div>
+    </div>
+  
+    <div
+      *ngIf="isLoading" 
+      class="wrap-loading"
+      >
+      <mat-spinner></mat-spinner>
+    </div>
+    
+    <ng-container *ngIf="(searchData$ | async) as searchData">
+      <ng-container 
+        *ngIf="searchData.length > 0; 
+        else noSearchData"
+        >
+        <app-search-list 
+          *ngIf="!isLoading" 
+          [searchList]="searchData"
+          >
+        </app-search-list>
+      </ng-container>
+    </ng-container>
+    
+    <mat-paginator
+      class="pagination"
+      [length]="pagination?.total_count"
+      [pageIndex]="pagination?.offset / pageLimit"
+      [pageSize]="pageLimit"
+      [showFirstLastButtons]="true"  
+      >
+    </mat-paginator>
+    
+    <ng-template #noSearchData>
+      <div class="wrap-not-found">
+        There are no search data!
+      </div>  
+    </ng-template>
+  
+  </div>
