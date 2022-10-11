@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { SearchComponent } from './search/search.component';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   imports: [
+    SearchModule
   ],
   declarations: [
-    SearchComponent
   ],
   providers: []
 })
