@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 
-@Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+import { SearchDetailComponent } from './detail/detail.component';
+import { SearchListComponent } from './list/list.component';
+import { SearchComponent } from './search.component';
+
+@NgModule({
+  declarations: [
+    SearchComponent,
+    SearchListComponent,
+    SearchDetailComponent
+  ],
+  imports: [    
+  ],
+  providers: []
 })
-export class SearchComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class MovieModule {
 }
