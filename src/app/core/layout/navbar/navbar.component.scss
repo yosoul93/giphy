@@ -1,0 +1,14 @@
+mat-toolbar {
+  position: fixed;
+  z-index: 1;
+
+  .spacer {
+    flex: 1 0 auto;
+  }
+  
+  button {
+    margin: 0 10px;
+    background: white;
+    color: black;
+  }
+}
