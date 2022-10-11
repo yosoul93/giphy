@@ -1,4 +1,4 @@
-export type SearchProduct = { 
+export type SearchData = { 
   analytics: object,
   analytics_response_payload: string,
   bitly_gif_url: string,
