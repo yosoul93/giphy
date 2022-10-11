@@ -1,1 +1,36 @@
-<p>list works!</p>
+<div class="wrap-search-list">
+  <div class="wrap-custom-search-list">
+
+    <div 
+      class="searches" 
+      *ngFor="let search of searchList"
+      >
+      <div class="card">
+        
+        <div class="image">
+          <img *ngIf="search.images.original.url" [src]="search.images.original.url" />
+          <img *ngIf="!search.images.original.url" [src]="'assets/images/no-image.jpg'" />
+        </div>
+  
+        <div class="content">
+          <div class="header">{{ search.title }}</div>
+        </div>
+  
+        <a 
+          [routerLink]="['/search/detail', search.id]" 
+          class="extra"
+          >
+          
+          <div class="wrap-date">
+            <span>{{ search.import_datetime | date:'mediumDate' }}</span>
+          </div>
+  
+          <button mat-button class="detail-btn">
+            Details
+          </button>
+          
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

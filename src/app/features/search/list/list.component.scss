@@ -1,0 +1,68 @@
+@use "src/app/shared/scss/breakpoints" as mixin;
+
+.wrap-search-list {
+      
+  .wrap-custom-search-list {
+    display: grid;    
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 1rem;
+    
+    @include mixin.media-breakpoint('sm') {
+      grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+    @include mixin.media-breakpoint('xs') {
+      grid-template-columns: repeat(1,minmax(0,1fr));
+    }
+
+    .searches {
+      padding: 1rem;
+      vertical-align: top;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+
+        .image {
+          img {
+            width: 100%;
+            height: 435px;
+          }
+        }
+        .content {
+          padding: 1em;
+          height: 40px;
+
+          .header {
+            width: 100%;
+            font-weight: 700;
+            font-size: 1.3em;
+            line-height: 1.3em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        
+        .extra {
+          padding: .75em 1em;
+          border-top: 1px solid rgba(34,36,38,.1);
+          
+          .wrap-date {
+            position: relative;
+            top: 7px;      
+            font-size: 1em;
+            color: rgba(0,0,0,.4);
+            float: left;
+          }
+
+          .detail-btn {
+            background-color: #db2828;
+            color: #fff;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
