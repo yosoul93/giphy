@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: 'https://api.giphy.com/v1',
+  apiKey: 'v1oYXVxtSfBCK25oapl8BOV6D5O2h5Fq',
 };
 
 /*
